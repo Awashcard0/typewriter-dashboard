@@ -7,23 +7,23 @@
     <script src="/script.js"></script>
     <script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
     <title>Document</title>
+    <button onclick="myFunction();">Dark</button>
 </head>
-<body onload="gettime()">
+<body onload="gettime();">
     <div id="app"></div>
 </body>
 <script>
+    var date = "Date"
+    var time = "Time"
+    var today = new Date();
+	
     
-
     function gettime() {
-      setTimeout(function(){
-      var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-gettime();
-}, 1000);
-    }
-</script>
-<script>    
+      today = new Date();
+ date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+ time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//gettime();
+
     var app = document.getElementById('app');
 
 var typewriter = new Typewriter(app, {
@@ -31,24 +31,34 @@ var typewriter = new Typewriter(app, {
 });
 
 typewriter.typeString('Hello')
-  .pauseFor(2500)
+  .pauseFor(250)
   .deleteAll()
   .typeString('The time is ' + time)
-  .pauseFor(2500)
+  .pauseFor(1500)
   .deleteAll()
   .typeString("The date is " + date)
   //.typeString('<strong></strong>')
-  .pauseFor(2500)
-  .start();
+  .pauseFor(1500)
+  .start();	
+  setTimeout(() => {  gettime(); }, 17500);
+}
 
-
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
 </script>
 <style>
   div {
     padding: 70px 0;
   /* border: 3px solid green; */
   text-align: center;
-    font-size: 50px;
+    font-size: 75px;
   }
+  
+  .dark-mode {
+  background-color: black;
+  color: white;
+}
 </style>
 </html>
