@@ -12,7 +12,7 @@
     <div id="app"></div>
 </body>
 <script>
-    var app = document.getElementById('app');
+    
 
     function gettime() {
       setTimeout(function(){
@@ -22,6 +22,9 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 gettime();
 }, 1000);
     }
+</script>
+<script>    
+    var app = document.getElementById('app');
 
 var typewriter = new Typewriter(app, {
   loop: true
