@@ -14,6 +14,15 @@
 <script>
     var app = document.getElementById('app');
 
+    function gettime() {
+      setTimeout(function(){
+      var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+gettime();
+}, 1000);
+    }
+
 var typewriter = new Typewriter(app, {
   loop: true
 });
@@ -21,10 +30,10 @@ var typewriter = new Typewriter(app, {
 typewriter.typeString('Hello')
   .pauseFor(2500)
   .deleteAll()
-  .typeString('The time is ti:me')
+  .typeString('The time is ' + time)
   .pauseFor(2500)
-  .deleteChars(13)
-  .typeString("date is DD/MM/YYYY")
+  .deleteAll()
+  .typeString("The date is " + date)
   //.typeString('<strong></strong>')
   .pauseFor(2500)
   .start();
