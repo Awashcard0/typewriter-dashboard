@@ -18,15 +18,17 @@ var typewriter = new Typewriter(app, {
   loop: true
 });
 
-typewriter.typeString('Hello World!')
+typewriter.typeString('Hello')
   .pauseFor(2500)
   .deleteAll()
-  .typeString('Strings can be removed')
+  .typeString('The time is ti:me')
   .pauseFor(2500)
-  .deleteChars(7)
-  .typeString('<strong>altered!</strong>')
+  .deleteChars(13)
+  .typeString("date is DD/MM/YYYY")
+  //.typeString('<strong></strong>')
   .pauseFor(2500)
   .start();
+
 
 </script>
 </html>
